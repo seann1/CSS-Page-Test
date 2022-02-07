@@ -12,6 +12,9 @@ body {
   overflow-x: hidden;
   margin: 0; }
 
+.pointer {
+  cursor: pointer; }
+
 .hero {
   background-image: url("../assets/hero-mountains-2.png");
   height: 590px;
@@ -48,7 +51,8 @@ body {
   height: 4em; }
 
 @media screen and (min-width: 950px) {
-  .container .mountain-container {
+  .container,
+  .mountain-container {
     margin: auto;
     width: 70%; } }
 
@@ -189,30 +193,28 @@ body {
   text-decoration: underline; }
 
 .tab-1-background {
-  /* background-image: url("assets/tab-1-background.png"); */
   position: relative;
   height: 600px;
   width: 100vw;
-  /* margin-top: -200px; */
-  /* background-size: cover;
-    overflow: hidden; */ }
+  overflow: hidden; }
 
 .tab-1-background::before {
   position: absolute;
   content: "";
   z-index: -1;
-  width: 100vw;
-  height: 800px;
-  margin-top: -280px;
+  min-width: 1600px;
+  min-height: 800px;
+  margin-top: -130px;
   background-image: url("../assets/tab-1-background.png");
+  background-size: cover;
   background-repeat: repeat-x; }
 
 .tab-2-background {
-  /* background-image: url("assets/tab-1-background.png"); */
   position: relative;
   height: 600px;
   width: 100vw;
-  overflow: hidden; }
+  overflow: hidden;
+  display: none; }
 
 .tab-2-background::before {
   position: absolute;

@@ -13,14 +13,14 @@
         <img src="assets/Logo.png" alt="logo" class="logo" />
         <div class="nav-links">
           <span
-            class="nav-link"
+            class="nav-link pointer"
             onclick="document.getElementById('history').scrollIntoView({
               behavior: 'smooth'
             })"
             >01.HISTORY</span
           >
           <span
-            class="nav-link"
+            class="nav-link pointer"
             onclick="document.getElementById('team').scrollIntoView({
               behavior: 'smooth'
             })"
@@ -39,14 +39,14 @@
           />
           <div class="nav-links second-nav-links">
             <span
-              class="nav-link black"
+              class="nav-link black pointer"
               onclick="document.getElementById('history').scrollIntoView({
               behavior: 'smooth'
             })"
               >01.HISTORY</span
             >
             <span
-              class="nav-link black"
+              class="nav-link black pointer"
               onclick="document.getElementById('team').scrollIntoView({
               behavior: 'smooth'
             })"
@@ -134,13 +134,40 @@
     <section class="fourth">
       <div class="mountain-container">
         <div class="flex-container mountain-flex">
-          <span class="mountain mountain-active">MOUNTAIN 1</span>
-          <span class="mountain">MOUNTAIN 2</span>
+          <span
+            class="mountain mountain-active pointer"
+            onclick="showHideTab('tab1', 'tab2')"
+            >MOUNTAIN 1</span
+          >
+          <span class="mountain pointer" onclick="showHideTab('tab2', 'tab1')"
+            >MOUNTAIN 2</span
+          >
         </div>
       </div>
     </section>
     <!-- <section class="tab-1-background"><div class="container"></div></section> -->
-    <section class="tab-2-background">
+    <section class="tab-1-background" id="tab1">
+      <div class="container">
+        <div class="schedule-container schedule-width">
+          <h3 class="schedule">SCHEDULE</h3>
+          <div class="schedule-grid">
+            <div class="schedule-date">17 Nov 2016</div>
+            <div class="schedule-item">Vestibulum viverra</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div class="schedule-date">17 Nov 2016</div>
+            <div class="schedule-item">Vestibulum viverra</div>
+            <div class="schedule-date">17 Nov 2016</div>
+            <div class="schedule-item">Vestibulum viverra</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div class="schedule-date">17 Nov 2016</div>
+            <div class="schedule-item">Vestibulum viverra</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="tab-2-background" id="tab2">
       <div class="container">
         <div class="schedule-container schedule-width">
           <h3 class="schedule">SCHEDULE</h3>
@@ -172,4 +199,17 @@
       </div>
     </section>
   </body>
+  <script>
+    const showHideTab = (shown, hidden) => {
+      var activeClass = document.querySelectorAll(".mountain-active");
+      activeClass.forEach((element) =>
+        element.classList.remove("mountain-active")
+      );
+      event.target.classList.add("mountain-active");
+      var hiddenElem = document.getElementById(hidden);
+      var shownElem = document.getElementById(shown);
+      hiddenElem.style.display = "none";
+      shownElem.style.display = "block";
+    };
+  </script>
 </html>
