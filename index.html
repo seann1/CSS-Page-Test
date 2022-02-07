@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Skilltest</title>
   </head>
   <body>
@@ -12,8 +12,20 @@
       <div class="container">
         <img src="assets/Logo.png" alt="logo" class="logo" />
         <div class="nav-links">
-          <span class="nav-link">01.HISTORY</span>
-          <span class="nav-link">02.TEAM</span>
+          <span
+            class="nav-link"
+            onclick="document.getElementById('history').scrollIntoView({
+              behavior: 'smooth'
+            })"
+            >01.HISTORY</span
+          >
+          <span
+            class="nav-link"
+            onclick="document.getElementById('team').scrollIntoView({
+              behavior: 'smooth'
+            })"
+            >02.TEAM</span
+          >
         </div>
       </div>
     </section>
@@ -26,15 +38,27 @@
             class="second-logo"
           />
           <div class="nav-links second-nav-links">
-            <span class="nav-link black">01.HISTORY</span>
-            <span class="nav-link black">02.TEAM</span>
+            <span
+              class="nav-link black"
+              onclick="document.getElementById('history').scrollIntoView({
+              behavior: 'smooth'
+            })"
+              >01.HISTORY</span
+            >
+            <span
+              class="nav-link black"
+              onclick="document.getElementById('team').scrollIntoView({
+              behavior: 'smooth'
+            })"
+              >02.TEAM</span
+            >
           </div>
         </div>
       </div>
     </section>
     <section class="second">
       <div class="width-container">
-        <img src="assets/01History.png" alt="" />
+        <img src="assets/01History.png" alt="History" id="history" />
 
         <p class="margin-p">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, tenetur
@@ -94,7 +118,7 @@
         </div> -->
         <div class="flex-container">
           <div class="flex-item climb02-container">
-            <img src="assets/02Climb.png" alt="climb" class="climb" />
+            <img src="assets/02Climb.png" alt="climb" class="climb" id="team" />
           </div>
           <div class="flex-item climb-text-container">
             <span class="vert-align climb-text">
@@ -108,7 +132,7 @@
       </div>
     </section>
     <section class="fourth">
-      <div class="container">
+      <div class="mountain-container">
         <div class="flex-container mountain-flex">
           <span class="mountain mountain-active">MOUNTAIN 1</span>
           <span class="mountain">MOUNTAIN 2</span>
